@@ -28,7 +28,7 @@ Used a Random Forest, tuned with GridSearchCV, with class-weighted training sinc
 
 **Result:** 84% accuracy, 67% recall on the risky class.
 
-**A mistake I made and fixed:** the first version of this model included the exact columns used to build the risk label in the first place (`invoice_dollars` vs `total_item_dollars`). That meant the model wasn't really learning to spot risk — it was just reverse-engineering the rule I used to create the label, which is a classic data leakage problem. Removed those columns, rebuilt the feature set from things the model couldn't "cheat" with, and the accuracy dropped a bit — which is expected and honestly a sign the fix worked, not a step backward.
+**A mistake I made and fixed:** the first version of this model included the exact columns used to build the risk label in the first place (`invoice_dollars` vs `total_item_dollars`). That meant the model wasn't really learning to spot risk, it was just reverse-engineering the rule I used to create the label, which is a classic data leakage problem. Removed those columns, rebuilt the feature set from things the model couldn't "cheat" with, and the accuracy dropped a bit which is expected and honestly a sign the fix worked, not a step backward.
 
 ## Tech stack
 
