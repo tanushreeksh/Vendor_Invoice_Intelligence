@@ -15,8 +15,8 @@ Freight cost is annoying to plan for ahead of time, and most teams don't have th
 Objective - Predict the expected freight cost for a vendor invoice using quantity, invoice value and historical behavior.
 
 WHY it matters?
-    Poor freight estimation impacts margin analysis and budgeting
-    Early prediction improves decision making and vendor negotiation
+1. Poor freight estimation impacts margin analysis and budgeting
+2. Early prediction improves decision making and vendor negotiation
 
 **Features used:** Quantity, Dollars
 
@@ -25,8 +25,8 @@ WHY it matters?
 Objective - Identify invoices that may require review based on mismatches and unusual purchase order patterns.
 
 WHY it matters?
-    Early risk detection helps reduce billing errors
-    Prevent financial discrepancies and prioritize invoices for manual review.
+1. Early risk detection helps reduce billing errors
+2. Prevent financial discrepancies and prioritize invoices for manual review.
 
 **Features used:** invoice quantity, freight, total brands per PO, total item quantity per PO, days from PO to invoice, days to pay
 
