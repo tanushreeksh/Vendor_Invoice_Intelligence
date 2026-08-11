@@ -55,11 +55,6 @@ def prepare_features(df: pd.DataFrame):
     features = [
         "Quantity",
         "Dollars",
-        "dollars_per_unit",
-        "days_po_to_invoice",
-        "days_to_pay",
-        "invoice_month",
-        "vendor_invoice_count",
     ]
 
     df = df.dropna(subset=features + ["Freight"])

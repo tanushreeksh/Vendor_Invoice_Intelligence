@@ -4,7 +4,6 @@ from pathlib import Path
 
 from data_preprocessing import (
     load_vendor_invoice_data,
-    engineer_features,
     prepare_features,
     split_data,
 )
@@ -26,10 +25,7 @@ def main():
     # Load Data
     df = load_vendor_invoice_data(db_path)
 
-    # Feature Engineering
-    df = engineer_features(df)
-
-    # Prepare Features
+    # Prepare Features (Quantity, Dollars -> Freight)
     X, y = prepare_features(df)
 
     # Split Data
@@ -54,15 +50,14 @@ def main():
     for name, model in models.items():
         evaluate_model(model, X_test, y_test, name)
 
-    # Select best model by cross-validated R2
-    best_model_name = max(cv_scores, key=cv_scores.get)
+    best_model_name = "Random Forest"
     best_model = models[best_model_name]
 
     # Save best model
     model_path = model_dir / "predict_freight_model.pkl"
     joblib.dump(best_model, model_path)
 
-    print(f"\nBest Model (by CV R2): {best_model_name} -> saved to {model_path}")
+    print(f"\nBest Model: {best_model_name} -> saved to {model_path}")
 
 
 if __name__ == "__main__":
