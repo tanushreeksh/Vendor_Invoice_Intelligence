@@ -9,6 +9,7 @@ This project implements an **end-to-end machine learning system** designed to su
 Freight cost is annoying to plan for ahead of time, and most teams don't have the bandwidth to manually check every single invoice for mismatches or weird patterns. I wanted to see if a fairly simple ML pipeline could help with both using the same underlying dataset.
 
 <h2><a class = 'anchor' id = 'project-overview'></a>Business Objectives</h2>
+
 ## 1. : Freight Cost Prediction (Regression)
 
 Objective - Predict the expected freight cost for a vendor invoice using quantity, invoice value and historical behavior.
