@@ -33,10 +33,6 @@ WHY it matters?
 **Features used:** invoice quantity, freight, total brands per PO, total item quantity per PO, days from PO to invoice, days to pay
 
 
-Prediction uses two probability thresholds rather than a single 0.5 cutoff: invoices scoring above 0.40 are flagged risky, below 0.30 are flagged not-risky, and anything in between is routed to manual review instead of forced into either bucket.
-
-
-
 ## Tech stack
 
 Python, SQL (SQLite), scikit-learn, pandas, NumPy, Streamlit
