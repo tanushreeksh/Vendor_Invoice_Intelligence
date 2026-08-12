@@ -10,6 +10,9 @@ Freight cost is annoying to plan for ahead of time, and most teams don't have th
 
 <h2><a class = 'anchor' id = 'project-overview'></a>Business Objectives</h2>
 
+## 1. : Freight Cost Prediction (Regression)
+>>>>>>> 3b89e5f0ea9217c45971d6edc310d7fff33d2e95
+
 ## 1: Freight Cost Prediction (Regression)
 Objective - Predict the expected freight cost for a vendor invoice using quantity, invoice value and historical behavior.
 
@@ -29,11 +32,10 @@ WHY it matters?
 
 **Features used:** invoice quantity, freight, total brands per PO, total item quantity per PO, days from PO to invoice, days to pay
 
-Used a Random Forest, tuned with GridSearchCV, with class-weighted training since risky invoices are the minority class.
 
-**Result:** 84% accuracy, 67% recall on the risky class.
+Prediction uses two probability thresholds rather than a single 0.5 cutoff: invoices scoring above 0.40 are flagged risky, below 0.30 are flagged not-risky, and anything in between is routed to manual review instead of forced into either bucket.
 
-**A mistake I made and fixed:** the first version of this model included the exact columns used to build the risk label in the first place (`invoice_dollars` vs `total_item_dollars`). That meant the model wasn't really learning to spot risk — it was just reverse-engineering the rule I used to create the label, which is a classic data leakage problem. Removed those columns, rebuilt the feature set from things the model couldn't "cheat" with, and the accuracy dropped a bit — which is expected and honestly a sign the fix worked, not a step backward.
+
 
 ## Tech stack
 
@@ -55,7 +57,7 @@ streamlit run app.py
 | Freight Cost Prediction | R² (cross-validated) | 96% |
 | Freight Cost Prediction | Median error | $2.75 |
 | Invoice Risk Flagging | Accuracy | 84% |
-| Invoice Risk Flagging | Recall (risky class) | 67% |
+| Invoice Risk Flagging | Recall (risky class 0.40 threshold) | 71% |
 
 ## Dataset
 
