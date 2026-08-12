@@ -19,7 +19,7 @@ WHY it matters?
 
 **Features used:** Quantity, Dollars
 
-## 2: Invoice Risk Flagging
+## 2: Invoice Risk Flagging (Classification)
 
 Objective - Identify invoices that may require review based on mismatches and unusual purchase order patterns.
 
@@ -29,7 +29,7 @@ WHY it matters?
 
 **Features used:** invoice quantity, freight, total brands per PO, total item quantity per PO, days from PO to invoice, days to pay
 
-Prediction uses two probability thresholds rather than a single 0.5 cutoff: invoices scoring above 0.40 are flagged risky, below 0.30 are flagged not-risky, and anything in between is routed to manual review instead of forced into either bucket.
+Prediction uses two probability thresholds rather than a single 0.5 cutoff: invoices scoring above 0.40 are flagged risky, below 0.30 are flagged not risky and anything in between is routed to manual review instead of forced into either bucket.
 
 ## Tech stack
 
