@@ -10,9 +10,6 @@ Freight cost is annoying to plan for ahead of time, and most teams don't have th
 
 <h2><a class = 'anchor' id = 'project-overview'></a>Business Objectives</h2>
 
-## 1. : Freight Cost Prediction (Regression)
->>>>>>> 3b89e5f0ea9217c45971d6edc310d7fff33d2e95
-
 ## 1: Freight Cost Prediction (Regression)
 Objective - Predict the expected freight cost for a vendor invoice using quantity, invoice value and historical behavior.
 
@@ -32,6 +29,7 @@ WHY it matters?
 
 **Features used:** invoice quantity, freight, total brands per PO, total item quantity per PO, days from PO to invoice, days to pay
 
+Prediction uses two probability thresholds rather than a single 0.5 cutoff: invoices scoring above 0.40 are flagged risky, below 0.30 are flagged not-risky, and anything in between is routed to manual review instead of forced into either bucket.
 
 ## Tech stack
 
