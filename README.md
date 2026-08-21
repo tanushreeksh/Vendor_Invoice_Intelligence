@@ -27,7 +27,7 @@ WHY it matters?
 1. Early risk detection helps reduce billing errors
 2. Prevent financial discrepancies and prioritize invoices for manual review.
 
-**Features used:** invoice quantity, freight, PO-to-invoice delay, and total item quantity."
+**Features used:** invoice quantity, freight, PO-to-invoice delay, and total item quantity.
 
 Prediction uses two probability thresholds rather than a single 0.5 cutoff: invoices scoring above 0.40 are flagged risky, below 0.30 are flagged not risky and anything in between is routed to manual review instead of forced into either bucket.
 
